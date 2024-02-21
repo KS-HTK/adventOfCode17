@@ -5,6 +5,7 @@
 #include "day01.h"
 
 string Day01::part_1(string input) {
+    input.pop_back();
     int il = input.length();
     input += input[0];
     int sum = 0;
@@ -17,6 +18,7 @@ string Day01::part_1(string input) {
 }
 
 string Day01::part_2(string input) {
+    input.pop_back();
     int il = input.length();
     input += input;
     int sum = 0;

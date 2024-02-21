@@ -13,9 +13,9 @@
 extern "C" {
 #endif
 
-class Day01: public Day {
+class Day02: public Day {
 public:
-    Day01(): Day(".\\day01\\input") { };
+    Day02(): Day(".\\day02\\input") { };
     string part_1(string) override;
     string part_2(string) override;
 };

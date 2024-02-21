@@ -5,15 +5,14 @@
 #include "Day.h"
 
 string Day::get_input() {
-    string input;
     ifstream File(PATH);
     if (File.is_open()) {
-        File >> input;
+        string input((istreambuf_iterator<char>(File)), (istreambuf_iterator<char>()));
+        return input;
     }
     else {
         throw runtime_error(("File could not be opened! " + PATH));
     }
-    return input;
 }
 
 string Day::part_1(string input) {

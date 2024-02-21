@@ -4,48 +4,74 @@
 
 #include <algorithm>
 #include <vector>
-#include <sstream>
 #include "day04.h"
 
+vector<string> splitString(string str, const string& delimiter) {
+    vector<string> tokens;
+    size_t pos;
+    while ((pos = str.find(delimiter)) != string::npos) {
+        tokens.push_back(str.substr(0, pos));
+        str.erase(0, pos + delimiter.length());
+    }
+    tokens.push_back(str);
+    return tokens;
+}
+
+bool stringInVector(const vector<string>& v, const string& str) {
+    return any_of(v.begin(), v.end(), [&str](const string& word) {return str == word;});
+}
+
 string Day04::part_1(string input) {
-    auto splitString = [](const string& str)-> vector<string> {
-        vector<string> tokens;
-        istringstream iss(str);
-        string token;
-
-        while (iss >> token) {
-            tokens.push_back(token);
-        }
-
-        return tokens;
-    };
-
-    auto stringInVector = [](const vector<string>& v, const string& str) -> bool {
-        return find(v.begin(), v.end(), str) != v.end();
-    };
-
+    vector<string> lines = splitString(input, "\n");
+    lines.pop_back(); // remove empty last line
     int valid = 0;
-
-    string delimiter = "\n";
-    size_t pos = 0;
-    while ((pos = input.find(delimiter)) != string::npos) {
-        string st;
-        st = input.substr(0, pos);
-
-        vector<string> words = splitString(st);
+    for (const string& line: lines) {
+        vector<string> words = splitString(line, " ");
+        bool hasDupe = false;
         while (!words.empty()) {
             string word = words.back();
             words.pop_back();
-            if (stringInVector(words, word)) break;
+            if (stringInVector(words, word)) {
+                hasDupe = true;
+                break;
+            }
         }
-        if (words.empty()) valid++;
-
-        input.erase(0, pos + delimiter.length());
+        if (!hasDupe) valid++;
     }
 
     return to_string(valid);
 }
 
+bool areAnagrams(const string& word1, const string& word2) {
+    if (word1.length() != word2.length()) return false;
+    string sortedW1 = word1;
+    string sortedW2 = word2;
+    sort(sortedW1.begin(), sortedW1.end());
+    sort(sortedW2.begin(), sortedW2.end());
+    return sortedW1 == sortedW2;
+}
+
+bool anagramInVector(const vector<string>& v, const string& str) {
+    return any_of(v.begin(), v.end(), [&str](const string& word) {return areAnagrams(word, str);});
+}
+
 string Day04::part_2(string input) {
-    return to_string(-1);
+    vector<string> lines = splitString(input, "\n");
+    lines.pop_back(); // remove empty last line
+    int valid = 0;
+    for (const string& line: lines) {
+        vector<string> words = splitString(line, " ");
+        bool hasDupe = false;
+        while (!words.empty()) {
+            string word = words.back();
+            words.pop_back();
+            if (anagramInVector(words, word)) {
+                hasDupe = true;
+                break;
+            }
+        }
+        if (!hasDupe) valid++;
+    }
+
+    return to_string(valid);
 }

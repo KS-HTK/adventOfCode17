@@ -118,12 +118,6 @@ string Day03::part_2(string input) {
         return neighbors;
     };
 
-    auto vstring = [](const vector<int>& ints) -> string {
-        string s = "{";
-        for (int i: ints) s += " " + to_string(i);
-        return s+"}";
-    };
-
     vector<int> ints;
     ints.push_back(1);
     ints.push_back(1);

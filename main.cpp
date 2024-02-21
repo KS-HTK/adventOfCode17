@@ -4,6 +4,7 @@
 
 #include "day01\day01.h"
 #include "day02\day02.h"
+#include "day03\day03.h"
 using namespace std;
 
 int main() {
@@ -13,4 +14,7 @@ int main() {
     cout << "Day02: \n";
     Day02 day02;
     day02.run_day();
+    cout << "Day03: \n";
+    Day03 day03;
+    day03.run_day();
 }

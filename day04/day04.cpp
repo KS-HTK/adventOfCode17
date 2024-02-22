@@ -5,17 +5,7 @@
 #include <algorithm>
 #include <vector>
 #include "day04.h"
-
-vector<string> splitString(string str, const string& delimiter) {
-    vector<string> tokens;
-    size_t pos;
-    while ((pos = str.find(delimiter)) != string::npos) {
-        tokens.push_back(str.substr(0, pos));
-        str.erase(0, pos + delimiter.length());
-    }
-    tokens.push_back(str);
-    return tokens;
-}
+#include "../util.h"
 
 bool stringInVector(const vector<string>& v, const string& str) {
     return any_of(v.begin(), v.end(), [&str](const string& word) {return str == word;});

@@ -20,4 +20,6 @@ add_executable(adventOfCode17 main.cpp
         day05/day05.cpp
         day06/day06.h
         day06/day06.cpp
+        day07/day07.h
+        day07/day07.cpp
 )

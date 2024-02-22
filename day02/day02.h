@@ -4,10 +4,10 @@
 
 #include "..\Day.h"
 
-#ifndef AOCCPP_DAY01_H
-#define AOCCPP_DAY01_H
+#ifndef ADVENTOFCODE17_DAY02_H
+#define ADVENTOFCODE17_DAY02_H
 
-#endif //AOCCPP_DAY01_H
+#endif //ADVENTOFCODE17_DAY02_H
 
 #ifdef __cplusplus
 extern "C" {

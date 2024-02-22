@@ -8,6 +8,7 @@
 #include "day04\day04.h"
 #include "day05\day05.h"
 #include "day06\day06.h"
+#include "day07\day07.h"
 using namespace std;
 
 int main() {
@@ -29,4 +30,9 @@ int main() {
     cout << "Day06: \n";
     Day06 day06;
     day06.run_day();
+    cout << "Day07: \n";
+    Day07 day07;
+    day07.run_day();
+
+    return 0;
 }

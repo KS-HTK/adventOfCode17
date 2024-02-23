@@ -1,5 +1,5 @@
 //
-// Created by hkoertge on 22.02.2024.
+// Created by hkoertge on 23.02.2024.
 //
 
 #include "day09.h"
@@ -39,4 +39,3 @@ string Day09::part_2(string input) {
     }
     return to_string(pt2_score);
 }
-//x < 8117

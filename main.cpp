@@ -16,8 +16,9 @@
 #include "day12\day12.h"
 #include "day13\day13.h"
 #include "day14\day14.h"
-#include "day15\day15.h""
+#include "day15\day15.h"
 #include "day16\day16.h"
+#include "day17\day17.h"
 using namespace std;
 
 int main() {
@@ -69,5 +70,8 @@ int main() {
     cout << "Day16: \n";
     Day16 day16;
     day16.run_day();
+    cout << "Day17: \n";
+    Day17 day17;
+    day17.run_day();
     return 0;
 }

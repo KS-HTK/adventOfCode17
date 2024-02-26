@@ -3,11 +3,7 @@
 //
 
 #include "day15.h"
-#include "../day10/day10.h"
 #include "../util.h"
-#include <vector>
-#include <string>
-#include <limits>
 
 using namespace std;
 

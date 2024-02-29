@@ -20,9 +20,10 @@
 #include "day16\day16.h"
 #include "day17\day17.h"
 #include "day18\day18.h"
+#include "day19\day19.h"
 using namespace std;
 
-int main() {
+void run_all() {
     cout << "Day01: \n";
     Day01 day01;
     day01.run_day();
@@ -77,5 +78,12 @@ int main() {
     cout << "Day18: \n";
     Day18 day18;
     day18.run_day();
+    cout << "Day19: \n";
+    Day19 day19;
+    day19.run_day();
+}
+
+int main() {
+    run_all();
     return 0;
 }

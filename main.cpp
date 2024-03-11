@@ -25,6 +25,7 @@
 #include "day21\day21.h"
 #include "day22\day22.h"
 #include "day23\day23.h"
+#include "day24\day24.h"
 using namespace std;
 
 void run_all() {
@@ -97,6 +98,9 @@ void run_all() {
     cout << "Day23: \n";
     Day23 day23;
     day23.run_day();
+    cout << "Day24: \n";
+    Day24 day24;
+    day24.run_day();
 }
 
 int main() {
